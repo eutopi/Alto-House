@@ -36,3 +36,13 @@
     transform: rotate(360deg);
   }
 }
+
+.main {
+  background-color: #282c34;
+  color: white;
+  text-align: center;
+}
+
+h1 {
+  font-family: 'Courier New', Courier, monospace;
+}

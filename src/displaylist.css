@@ -1,0 +1,12 @@
+.list {
+    max-width: 1070px;
+    padding: 30px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: flex-start;
+}
+
+.card-padding {
+    padding: 20px;
+}

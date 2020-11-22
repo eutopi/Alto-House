@@ -1,0 +1,23 @@
+.title {
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.playlist {
+    background-color: #3a3f47;
+    padding: 20px;
+    border-radius: 25px;
+    width: fit-content
+  }
+
+.playlist-wrapper {
+    padding: 20px;
+}
+
+.playlist-row {
+    display: flex;
+    flex-direction: row;
+}
+
+.icon-btn:hover {
+    cursor: pointer;
+}
