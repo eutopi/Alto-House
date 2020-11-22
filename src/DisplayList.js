@@ -3,6 +3,9 @@ import ReactDOM from 'react-dom'
 import './displaylist.css'
 import MediaCard from './MediaCard'
 
+/**
+ * Displays each element in FilterList using a MediaCard
+ */
 class DisplayList extends React.Component {
     constructor(props) {
         super(props)

@@ -8,12 +8,19 @@ import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import "./mediacard.css"
 
+/**
+ * Pretty implementation of a single song item using components from Material UI
+ */
 class MediaCard extends React.Component {
 
     constructor(props) {
         super(props)
     }
 
+    /**
+     * Converts the number of seconds (number) to minutes and seconds (string: mm:ss)
+     * @param {number} duration
+     */
     convertSecsToMins = duration => {
         var min = Math.floor(duration / 60)
         var sec = duration % 60
@@ -23,6 +30,10 @@ class MediaCard extends React.Component {
         return min.toString() + ":" + sec.toString()
     }
 
+    /**
+     * Returns a categorical description of song duration based on its numerical value.
+     * @param song
+     */
     getDuration = duration => {
         if (duration > 300) {
             return "Long"

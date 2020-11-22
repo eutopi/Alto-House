@@ -15,10 +15,14 @@ import AlvvaysArt from "./img/alvvays.jpg"
 import MellowFellowArt from "./img/mellowfellow.jpg"
 import AdibSinArt from "./img/adibsin.jpg"
 
+/**
+ * Main component.
+ */
 class App extends React.Component {
 
   constructor(props) {
     super(props)
+    /** State contains all the songs to be displayed */
     this.state = {
       songs: [
         {name: "Space Song", artist: "Beach House", duration: 320, genre: "Alternative/Indie", artUrl: SpaceSongArt, videoUrl: "https://youtu.be/RBtlPT23PTM"},

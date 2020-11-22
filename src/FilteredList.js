@@ -11,6 +11,10 @@ import Aggregator from './Aggregator'
 const lengths = ["All", "Short", "Medium", "Long"]
 const genres = ["All", "Alternative/Indie", "Synth Pop", "Acoustic"]
 
+/**
+ * Stores the main functionalities of the site, inclduing filtering and sorting 
+ * through the list of songs.
+ */
 class FilteredList extends React.Component {
 
     constructor(props) {
@@ -24,22 +28,38 @@ class FilteredList extends React.Component {
         }
     }
 
+    /**
+     * Changes the stored state of genre when the corresponding link is selected.
+     * @param {string} event
+     */
     onSelectFilterGenre = event => {
         this.setState({
             genre: event
         })
     }
 
+    /**
+     * Changes the stored state of length when the corresponding link is selected.
+     * @param {string} event
+     */
     onSelectFilterLength = event => {
         this.setState({
             length: event
         })
     }
 
+    /**
+     * Changes the function to sort by when the dropdown menu is changed.
+     * @param event
+     */
     handleChange = event => {
         this.setState({sortFunc: event.target.value})
     }
 
+    /**
+     * Returns whether the song genre matches the currently selected genre.
+     * @param song
+     */
     matchesFilterGenre = song => {
         if (this.state.genre === "All") { 
             return true
@@ -50,6 +70,10 @@ class FilteredList extends React.Component {
         }
     }
 
+    /**
+     * Returns whether the song length matches the currently selected length.
+     * @param song
+     */
     matchesFilterLength = song => {
         if (this.state.length === "All") {
             return true
@@ -60,6 +84,10 @@ class FilteredList extends React.Component {
         }
     }
 
+    /**
+     * Returns a categorical description of song duration based on its numerical value.
+     * @param song
+     */
     getDuration = song => {
         if (song.duration > 300) {
             return "Long"
@@ -70,6 +98,11 @@ class FilteredList extends React.Component {
         }
     }
 
+    /**
+     * Returns 0 if a=b, -1 if a<b, and 1 if b>a
+     * @param a
+     * @param b
+     */
     compareSortFunc = (a, b) => {
         if (this.state.sortFunc === "Default") {
             return 0
@@ -80,6 +113,10 @@ class FilteredList extends React.Component {
         }
     }
     
+    /**
+     * Adds the song name to the playlist
+     * @param {string} songname
+     */
     addToPlaylist = songName => {
         for (var i = 0; i < this.props.list.length; i++) {
             if (this.props.list[i]["name"] === songName) {
@@ -89,6 +126,10 @@ class FilteredList extends React.Component {
         this.setState({playlist: [...this.state.playlist, songName]})
     }
 
+    /**
+     * Removes the song name with the corresponding index from the playlist
+     * @param {number} index
+     */
     removeFromPlaylist = index => {
         var l = this.state.playlist
         var songName = l.splice(index, 1)[0]

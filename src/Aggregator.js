@@ -7,11 +7,19 @@ import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 
+/**
+ * Aggregator that stores all songs in a playlist. Clicking on appropriate buttons
+ * removes/adds songs to the playlist.
+ */
 class Aggregator extends React.Component {
     constructor(props) {
         super(props)
     }
 
+    /**
+     * Converts the number of seconds (number) to minutes and seconds (string: mm:ss)
+     * @param {number} duration
+     */
     convertSecsToMins = duration => {
         var min = Math.floor(duration / 60)
         var sec = duration % 60
